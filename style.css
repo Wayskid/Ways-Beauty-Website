@@ -1,0 +1,412 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+
+/*Globals*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    padding: 30px 30px 0 30px;
+    overflow-y: hidden;
+}
+
+
+/*Aside*/
+
+.logo{
+    width: 12%;
+    height:90.8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.waysLogo{
+    max-width: 150px;
+    max-height: 300px;
+}
+
+.underLogo{
+    margin-top: auto;
+}
+
+/*Main Section*/
+
+.container{
+    position: absolute;
+    z-index: 2000;
+    right: 1.8%;
+    left: 15%;
+    background-color: rgb(21, 0, 123);
+    mix-blend-mode: overlay;
+    min-height: 90.8%;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.bkgVideo{
+    position: absolute;
+    right: 1.8%;
+    left: 15%;
+    width: 83.2%;
+    height: 90.8%;
+    object-fit: cover;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.navbar{
+    position: absolute;
+    right: 1.8%;
+    left: 15%;
+    z-index: 3000;
+    padding: 30px 90px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 700;
+}
+
+.burger{
+    margin-right: 40%;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3{
+    background-color: white;
+    height: 3px;
+    width: 21px;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.bar2, .bar3{
+    margin-top: 4px;
+}
+
+.mainBody{
+    top: 35%;
+    right: 6.8%;
+    width: 72.5%;
+    z-index: 2000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+ .mainBody1{
+    display: flex ;
+    justify-content: space-between;
+    -webkit-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
+}
+
+.mainLeft{
+    width: 65%;
+    font-size: 280%;
+    font-weight: 600;
+}
+
+.span1{
+    margin-right: -3px;
+}
+
+.mainRight{
+    width: 40%;
+}
+
+.mainTxt{
+    font-weight: 200;
+    max-width: 75%;
+}
+
+.mainBtn{
+    position: absolute;
+    background-color: white;
+    color: rgb(21, 0, 123);
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 8px 16px;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.mainBody2{
+    opacity: 0;
+    margin-top: 550px;
+    display: flex;
+    justify-content: space-between;
+    -webkit-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+    cursor: pointer;
+}
+
+.mainLeft2{
+    width: 57%;
+    font-weight: 600;
+}
+
+
+.mainBody2Header{
+    font-size: 400%;
+    font-weight: 600;
+}
+
+.mainBody2Txt{
+    font-weight: 200;
+    width: 90%;
+    margin-top: 40px;
+}
+
+.mainRight2{
+    width: 28%;
+    font-weight: 200;
+}
+
+.mainRight2 img{
+    max-width: 190px;
+    max-width: auto;
+}
+
+.mainBtn2{
+    background-color: white;
+    color: rgb(21, 0, 123);
+    font-weight: 800;
+    padding: 8px 16px;
+    margin-top: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+.footer{
+    position: absolute;
+    right: 6.8%;
+    width: 72.5%;
+    top: 87.5%;
+    bottom: 7%;
+    color: white;
+    display: flex;
+    z-index: 3000;
+}
+
+.facebook{
+    background-image: url(img/whiteFB.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 600px;
+    background-size: 20px 20px;
+    margin-right: -45px;
+}
+
+.twitter{
+    background-image: url(img/whiteTwiter.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 600px;
+    background-size: 20px 20px;
+    margin-right: -45px;
+}
+
+.instagram{
+    background-image: url(img/whiteIG.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 600px;
+    background-size: 20px 20px;
+}
+
+.arrow{
+    opacity: 0;
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    left: 45.8%;
+    transition: ease;
+    transform: rotateX(50deg);
+    animation-duration: 1.2s;
+    animation-name: updown;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes updown{
+    from{
+        transform: rotateX(70deg);
+        margin-bottom: 50px;
+    }
+    80%{
+        transform: rotateX(50deg);
+    }
+    to{
+        margin-top: 10px;
+        transform: rotateX(10deg);
+    }
+}
+
+.leftPoint{
+    background-color: white;
+    height: 1px;
+    width: 20px;
+    transform: rotate(45deg) translateY(10px);
+    margin-right: -20px;
+}
+.rightPoint{
+    background-color: white;
+    height:1px;
+    width: 20.2px;
+    transform: rotate(-45deg) translateY(10px);
+
+}
+
+.search img{
+    width: 15px;
+    height: 20px;
+    transform: translateY(3px) rotateX(35deg);
+    margin-right: 10px;
+}
+
+.search{
+    opacity: 0;
+    margin-left: auto;
+    display: flex;
+    color: rgb(21, 0, 123);
+    font-weight: 700;
+}
+
+.showcase{
+    opacity: 0;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    color: rgb(21, 0, 123);
+    top: 30%;
+    left: 21%;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.showcase h2{
+    font-size: 2rem;
+}
+
+.showcase a{
+    display: block;
+    margin-top: 10px;
+}
+
+
+
+
+
+/*JS classes*/
+
+
+/*Click Arrow*/
+
+.mainBody.showMainBody2{
+    top: -80%;
+    transition: top 1.5s ease;
+}
+.mainBody2.displayMain2{
+    opacity: 1;
+}
+
+/*Click Burger*/
+
+.bar1.bkgColor, .bar2.bkgColor, .bar3.bkgColor{
+    background-color: rgb(21, 0, 123);
+}
+
+.bar1.cross{
+    transform: rotate(45deg) translateX(5px) translateY(7px);
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(21, 0, 123);
+}
+.bar2.cross{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-color: rgb(21, 0, 123);
+}
+.bar3.cross{
+    transform: rotate(-45deg) translateX(3px) translateY(-5.5px);
+    transition: all 0.5s ease-in-out;
+    background-color: rgb(21, 0, 123);
+}
+
+.arrow.hideArrow{
+    opacity: 0;
+}
+
+.navbar.showNavbar{
+    color: rgb(21, 0, 123);
+}
+
+.facebook.showFacebook{
+    background-image: url(img/purpleFB.png);
+}
+
+.twitter.showTwitter{
+    background-image: url(img/purpleTwitter.png);
+}
+
+.instagram.showIG{
+    background-image: url(img/purpleIG.png);
+}
+
+.search.showSearch{
+    opacity: 1;
+}
+
+.container.removeCon{
+    left: 100%;
+    transition: left 0.8s ease;
+}
+
+.mainBody.hideMainBody{
+    opacity: 0;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+.showcase.showShowcase{
+    opacity: 1;
+    z-index: 2000;
+}
+
+.glow.showGlow{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
