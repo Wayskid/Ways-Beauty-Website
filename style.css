@@ -18,6 +18,11 @@
     color: inherit;
 }
 
+html{
+    touch-action: pan-x pan-y;
+    height: 100%;
+}
+
 body{
     overflow-y: hidden;
     margin: 2rem;
@@ -229,7 +234,7 @@ section{
     cursor: pointer;
     display: flex;
     justify-content: right;
-    margin-left: 40%;
+    margin-left: auto;
     transition: ease;
     transform: rotateX(70deg);
     animation-duration: 1.2s;
@@ -253,16 +258,16 @@ section{
 
 .leftPoint{
     background-color: white;
-    height: 1px;
+    height: 1.5px;
     width: 20px;
     transform: rotate(45deg) translateY(10px);
     margin-right: -20px;
 }
 .rightPoint{
     background-color: white;
-    height: 1px;
+    height: 1.5px;
     width: 20.2px;
-    transform: rotate(-45deg) translateY(10px);
+    transform: rotate(-45deg) translateY(9px);
 
 }
 
@@ -275,7 +280,7 @@ section{
 }
 
 .search{
-    opacity: 0;
+    opacity: 1;
     margin-left: auto;
     display: flex;
     font-weight: 700;
@@ -306,6 +311,10 @@ section{
     display: grid;
     gap: 1rem;
     font-size: 0.8rem;
+}
+
+.mobileMenu{
+    display: none;
 }
 
 
@@ -414,6 +423,147 @@ section{
     transition: 2s;
 }
 
+.mobileMenu.showMobileMenu{
+    z-index: 2000;
+    opacity: 1;
+    transition: 2s;
+    clip-path: inset(0 0 0 0);
+}
+
+
+
+
+/* Media Query*/
+
+
+@media (max-width: 900px) {
+    
+    .bkgVideo{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+
+    .blueBkgClr{
+        position: fixed;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        
+    }
+
+
+    aside{
+        z-index: 3000;
+    }
+
+    .underLogo{
+        display: none;
+    }
+
+    .waysLogo{
+        position: fixed;
+        display: block;
+        max-width: 100px;
+        max-height: 200px; 
+    }
+    
+
+    .twoSections{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 100%;
+        z-index: 2000;
+        padding-inline: 2rem;
+        padding-block: 2rem;
+    }
+
+    .navbar{
+        flex-direction: row-reverse;
+    }
+
+    .burger{
+        margin-right: 0;
+    }
+
+    .navLink{
+        display: none;
+    }
+
+    .flex70-30{
+        grid-template-columns: none;
+        align-self: center;
+    }
+
+    .mainBody1, .mainBody2{
+        text-align: center;
+    }
+
+
+    .mainLeft, .mainTxt2{
+        width: 60%;
+        margin-inline: auto;
+
+    }
+
+    .mainBody2Txt{
+        width: 80%;
+        margin-inline: auto;
+    }
+
+    .mainTxt, .mainTxt2, .mainBody2Txt{
+        font-size: 16px;
+    }
+
+    .mainBtn{
+        margin-inline: auto;
+    }
+
+    .arrow{ 
+        margin-left: auto;
+    }
+
+    .leftPoint{
+        height: 2.5px;
+        transform: rotate(45deg) translateY(9px);
+    }
+
+    .rightPoint{
+        height: 2.5px;
+        transform: rotate(-45deg) translateY(9px);
+    }
+
+    .showcase{
+        display: none;
+    }
+
+    .mobileMenu{
+        position: absolute;
+        display: grid;
+        align-self: center;
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+        transition: 1.5s ease;
+        z-index: 3000;
+        gap: 4rem;
+        width: 90%;
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .mobileLinks{
+        color: blue;
+        font-weight: 700;
+        border-bottom: 2px solid;
+        padding: 2rem;
+        font-size: larger;
+    }
+    
+}
 
 
 
