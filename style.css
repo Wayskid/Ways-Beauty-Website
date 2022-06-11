@@ -4,33 +4,55 @@
 
 /*Globals*/
 
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    color: inherit;
     border: none;
     font-family: 'Poppins', sans-serif;
+    color: inherit;
 }
 
 body{
-    display: flex;
-    padding: 30px 30px 0 30px;
     overflow-y: hidden;
+    margin: 2rem;
+    height: calc(100vh - (2rem) * 2);
 }
+
+
+.containerBody{
+    display: flex;
+    min-height: 100%;
+}
+
+.flex70-30{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.headerFont{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.textfont{
+    font-size: 0rem;
+    font-weight: 200;
+}
+
 
 
 /*Aside*/
 
-.logo{
-    width: 12%;
-    height:90.8%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
+aside{
+    display: grid;
+    padding-block: 0.5rem;
+    align-content: space-between;
 }
 
 .waysLogo{
@@ -39,48 +61,59 @@ body{
 }
 
 .underLogo{
-    margin-top: auto;
+    text-align: center;
 }
 
 /*Main Section*/
 
-.container{
-    position: absolute;
-    z-index: 2000;
-    right: 1.8%;
-    left: 15%;
-    background-color: rgb(21, 0, 123);
-    mix-blend-mode: overlay;
-    min-height: 90.8%;
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
+
+.flexedRight{
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+.flexedRight >*{
+    grid-area: stack;
+}
+
+.blueBkgClr{
+    background-color: blue;
+    width: 100%;
+    opacity: 1;
+    mix-blend-mode: darken;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1.5s ease;
+    -webkit-transition: clip-path 1.5s ease;
 }
 
 .bkgVideo{
-    position: absolute;
-    right: 1.8%;
-    left: 15%;
-    width: 83.2%;
-    height: 90.8%;
     object-fit: cover;
-    opacity: 0.6;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transition: 2s;
 }
 
+.twoSections{
+    z-index: 2000;
+    display: grid;
+    grid-template-rows: repeat(1fr 2fr 1fr);
+    align-items: center;
+    padding-inline: 6rem;
+    gap: 18%;
+}
+
+
 .navbar{
-    position: absolute;
-    right: 1.8%;
-    left: 15%;
-    z-index: 3000;
-    padding: 30px 90px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     color: white;
     font-weight: 700;
+    transition: 2s;
 }
 
 .burger{
-    margin-right: 40%;
+    margin-right: 30%;
     cursor: pointer;
 }
 
@@ -88,162 +121,117 @@ body{
     background-color: white;
     height: 3px;
     width: 21px;
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .bar2, .bar3{
     margin-top: 4px;
 }
 
-.mainBody{
-    top: 35%;
-    right: 6.8%;
-    width: 72.5%;
-    z-index: 2000;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
+section{
+    display: grid;
+    z-index: 2;
     color: white;
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
 }
 
- .mainBody1{
-    display: flex ;
-    justify-content: space-between;
-    -webkit-transition: all 3s ease-in-out;
-    transition: all 3s ease-in-out;
+.mainBody1{
+    clip-path: inset(0 0 0 0);
+    transition: 1.5s ease;
 }
 
 .mainLeft{
-    width: 65%;
-    font-size: 280%;
-    font-weight: 600;
+    align-self: center;
+    width: 15ch;
 }
 
 .span1{
-    margin-right: -3px;
-}
-
-.mainRight{
-    width: 40%;
+    margin-right: -8px;
 }
 
 .mainTxt{
-    font-weight: 200;
-    max-width: 75%;
-}
-
-.mainBtn{
-    position: absolute;
-    background-color: white;
-    color: rgb(21, 0, 123);
-    font-size: 1rem;
-    font-weight: 800;
-    padding: 8px 16px;
-    margin-top: 40px;
-    cursor: pointer;
-    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 .mainBody2{
     opacity: 0;
-    margin-top: 550px;
-    display: flex;
-    justify-content: space-between;
-    -webkit-transition: all 2s ease-in-out;
-    transition: all 2s ease-in-out;
-    cursor: pointer;
-}
-
-.mainLeft2{
-    width: 57%;
-    font-weight: 600;
-}
-
-
-.mainBody2Header{
-    font-size: 400%;
-    font-weight: 600;
+    z-index: 2000;
+    grid-template-rows: repeat(1fr 2fr 1fr);
+    padding-inline: 6rem;
+    transform: translateY(100rem);
+    align-self: center;
+    clip-path: inset(0 0 0 0);
+    transition: 1.5s ease;
 }
 
 .mainBody2Txt{
-    font-weight: 200;
-    width: 90%;
-    margin-top: 40px;
+    margin-top: 1rem;
+    width: 70%;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-.mainRight2{
-    width: 28%;
-    font-weight: 200;
+.mainTxt2{
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
-.mainRight2 img{
-    max-width: 190px;
-    max-width: auto;
-}
-
-.mainBtn2{
+.mainBtn{
+    display: block;
     background-color: white;
-    color: rgb(21, 0, 123);
-    font-weight: 800;
-    padding: 8px 16px;
-    margin-top: 40px;
-    font-size: 1rem;
-    cursor: pointer;
-    position: absolute;
-    z-index: 2;
-    border-radius: 2px;
+    color: blue;
+    font-weight: 700;
+    padding: 0.4rem;
+    width: fit-content;
+    border-radius: 0.2rem;
+    margin-top: 1rem;
 }
+
+
 
 .footer{
-    position: absolute;
-    right: 6.8%;
-    width: 72.5%;
-    top: 87.5%;
-    bottom: 7%;
     color: white;
     display: flex;
-    z-index: 3000;
+    transition: 2s;
 }
 
 .facebook{
-    background-image: url(img/whiteFB.png);
+    background-image: url(img/whitefb1.png);
     background-repeat: no-repeat;
-    width: 100px;
-    height: 600px;
+    width: 20px;
+    height: 20px;
     background-size: 20px 20px;
-    margin-right: -45px;
+    margin-right: 2rem;
+    transition: 2s;
 }
 
 .twitter{
     background-image: url(img/whiteTwiter.png);
     background-repeat: no-repeat;
-    width: 100px;
-    height: 600px;
+    width: 20px;
+    height: 20px;
     background-size: 20px 20px;
-    margin-right: -45px;
+    margin-right: 2rem;
+    transition: 2s;
 }
 
 .instagram{
     background-image: url(img/whiteIG.png);
     background-repeat: no-repeat;
-    width: 100px;
-    height: 600px;
+    width: 20px;
+    height: 20px;
     background-size: 20px 20px;
-}
+    transition: 2s;
+} 
 
-.arrow{
-    opacity: 0;
-    position: absolute;
+.arrow{ 
     opacity: 1;
     cursor: pointer;
-    padding: 20px;
     display: flex;
-    left: 45.8%;
+    justify-content: right;
+    margin-left: 40%;
     transition: ease;
-    transform: rotateX(50deg);
+    transform: rotateX(70deg);
     animation-duration: 1.2s;
     animation-name: updown;
     animation-iteration-count: infinite;
@@ -253,15 +241,13 @@ body{
 
 @keyframes updown{
     from{
-        transform: rotateX(70deg);
-        margin-bottom: 50px;
+        
     }
     80%{
-        transform: rotateX(50deg);
+        transform:  translateY(10px) rotateX(50deg);
     }
     to{
-        margin-top: 10px;
-        transform: rotateX(10deg);
+        transform:  translateY(20px) rotateX(30deg);
     }
 }
 
@@ -274,48 +260,54 @@ body{
 }
 .rightPoint{
     background-color: white;
-    height:1px;
+    height: 1px;
     width: 20.2px;
     transform: rotate(-45deg) translateY(10px);
 
 }
 
 .search img{
-    width: 15px;
-    height: 20px;
-    transform: translateY(3px) rotateX(35deg);
+    width: 11px;
+    height: 15px;
+    transform: translateY(5px);
     margin-right: 10px;
+    transition: 2s;
 }
 
 .search{
     opacity: 0;
     margin-left: auto;
     display: flex;
-    color: rgb(21, 0, 123);
     font-weight: 700;
+    color: blue;
 }
 
+
 .showcase{
-    opacity: 0;
-    position: absolute;
+    color: blue;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    color: rgb(21, 0, 123);
-    top: 30%;
-    left: 21%;
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
+    align-self: center;
+    gap: min(2rem, 11rem);
+    padding-inline: 6rem;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    transition: 1.5s ease;
 }
 
 .showcase h2{
     font-size: 2rem;
+    margin-bottom: 2rem;
+    word-break: normal;
+    font-weight: 700;
 }
 
-.showcase a{
-    display: block;
-    margin-top: 10px;
+.showcaseLinks{
+    display: grid;
+    gap: 1rem;
+    font-size: 0.8rem;
 }
+
 
 
 
@@ -326,84 +318,101 @@ body{
 
 /*Click Arrow*/
 
-.mainBody.showMainBody2{
-    top: -80%;
-    transition: top 1.5s ease;
+.mainBody1.hideMainBody1{
+    /* display: none; */
+    opacity: 0;
+    transform: translateY(-400px);
 }
+
 .mainBody2.displayMain2{
     opacity: 1;
+    display: grid;
+    transform: translateY(1rem);
 }
+
+
 
 /*Click Burger*/
 
 .bar1.bkgColor, .bar2.bkgColor, .bar3.bkgColor{
-    background-color: rgb(21, 0, 123);
+    background-color: blue;
 }
 
 .bar1.cross{
-    transform: rotate(45deg) translateX(5px) translateY(7px);
-    transition: all 0.5s ease-in-out;
-    background-color: rgb(21, 0, 123);
+    transform: rotate(45deg) translateX(4px) translateY(7px);
+    background-color: blue;
 }
 .bar2.cross{
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    background-color: rgb(21, 0, 123);
+    transform: translateX(25rem);
+    background-color: blue;
 }
 .bar3.cross{
-    transform: rotate(-45deg) translateX(3px) translateY(-5.5px);
-    transition: all 0.5s ease-in-out;
-    background-color: rgb(21, 0, 123);
+    transform: rotate(-45deg) translateX(2.5px) translateY(-5.5px);
+    background-color: blue;
 }
+
+.blueBkgClr.open{
+    clip-path: inset(0 0 0 100%);
+}
+
+.showcase.showShowcase{
+    z-index: 2000;
+    opacity: 1;
+    transition: 2s;
+    clip-path: inset(0 0 0 0);
+}
+
 
 .arrow.hideArrow{
     opacity: 0;
 }
 
 .navbar.showNavbar{
-    color: rgb(21, 0, 123);
+    color: blue;
+    transition: 2s;
 }
+
+.mainBody1.hideMain{
+    opacity: 0;
+    transition: 1.5s ease;
+    clip-path: inset(0 0 0 100%);
+}
+
+.mainBody2.hideMain{
+    opacity: 0;
+    transition: 1.5s ease;
+    clip-path: inset(0 0 0 100%);
+}
+
+
+
+
 
 .facebook.showFacebook{
     background-image: url(img/purpleFB.png);
+    transition: 2s;
 }
 
 .twitter.showTwitter{
     background-image: url(img/purpleTwitter.png);
+    transition: 2s;
 }
 
 .instagram.showIG{
     background-image: url(img/purpleIG.png);
+    transition: 2s;
 }
 
 .search.showSearch{
     opacity: 1;
+    transition: 2s;
 }
 
-.container.removeCon{
-    left: 100%;
-    transition: left 0.8s ease;
+.bkgVideo.bkgVideoBlur{
+    opacity: 0.6;
+    transition: 2s;
 }
-
-.mainBody.hideMainBody{
-    opacity: 0;
-    -webkit-transition: all 0.6s ease-in-out;
-    transition: all 0.6s ease-in-out;
-}
-
-.showcase.showShowcase{
-    opacity: 1;
-    z-index: 2000;
-}
-
-.glow.showGlow{
-    display: block;
-}
-
-
-
-
-
 
 
 

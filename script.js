@@ -1,11 +1,10 @@
 
 
-const container = document.querySelector(".container");
+const blueBkgClr = document.querySelector(".blueBkgClr");
 const burger = document.querySelector(".burger");
 const bar1 = document.querySelector(".bar1");
 const bar2 = document.querySelector(".bar2");
 const bar3 = document.querySelector(".bar3");
-const mainBody = document.querySelector(".mainBody");
 const mainBody1 = document.querySelector(".mainBody1");
 const mainBody2 = document.querySelector(".mainBody2");
 const arrow = document.querySelector(".arrow");
@@ -15,14 +14,16 @@ const navbar = document.querySelector(".navbar");
 const facebook = document.querySelector(".facebook");
 const twitter = document.querySelector(".twitter");
 const instagram = document.querySelector(".instagram");
-const cross = document.querySelector(".cross");
-const glow = document.querySelector(".glow");
+const bkgVideo = document.querySelector(".bkgVideo");
+
+
 
 arrow.addEventListener("click", () => {
     
-        mainBody.classList.toggle("showMainBody2");
+        mainBody1.classList.toggle("hideMainBody1");
         mainBody2.classList.toggle("displayMain2");
 })
+
 
 burger.addEventListener("click", () => {
 
@@ -30,20 +31,18 @@ burger.addEventListener("click", () => {
         bar2.classList.toggle("cross");
         bar3.classList.toggle("cross");
         showcase.classList.toggle("showShowcase");
-        container.classList.toggle("removeCon");
+        blueBkgClr.classList.toggle("open");
         navbar.classList.toggle("showNavbar");
         facebook.classList.toggle("showFacebook");
         twitter.classList.toggle("showTwitter");
         instagram.classList.toggle("showIG");
         search.classList.toggle("showSearch");
-        mainBody.classList.toggle("hideMainBody");
-        burger.classList.toggle("purpleBurger");
+        mainBody1.classList.toggle("hideMain");
+        mainBody2.classList.toggle("hideMain");
+        bkgVideo.classList.toggle("bkgVideoBlur");
         arrow.classList.toggle("hideArrow");
 
         
 });
 
-arrow.addEventListener("click", () => {
-
-})
 
